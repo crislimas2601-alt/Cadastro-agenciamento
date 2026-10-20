@@ -300,7 +300,7 @@ export default function App() {
           <div className="flex items-center gap-2">
             <span className="font-bold text-slate-900">Torresul Imobiliária</span>
             <span className="text-slate-400">·</span>
-            <span className="text-slate-600 font-medium">Ambiente de Back Office</span>
+            <span className="text-slate-600 font-medium">Painel de Conferência</span>
           </div>
 
           <button
@@ -308,7 +308,7 @@ export default function App() {
             className="px-3 py-1 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-lg font-semibold flex items-center gap-1.5 cursor-pointer transition-colors"
           >
             <FileSpreadsheet className="w-3.5 h-3.5" />
-            Ir para Formulário do Cliente
+            Ir para Formulário
           </button>
         </header>
 
@@ -350,7 +350,7 @@ export default function App() {
             <div className="bg-slate-50 p-4 rounded-xl border border-slate-200 text-left text-xs space-y-1 text-slate-700">
               <p><strong>Proprietário:</strong> {data.nomeCompleto} · CPF: {data.cpf}</p>
               <p><strong>Imóvel:</strong> {data.tipoImovel} em {data.bairroImovel || data.cidadeImovel}</p>
-              <p><strong>Status:</strong> <span className="text-amber-700 font-semibold">Pendente para conferência no Back Office</span></p>
+              <p><strong>Status:</strong> <span className="text-amber-700 font-semibold">Pendente para conferência no Painel</span></p>
               <p><strong>Assinatura Digital:</strong> Registrada eletronicamente</p>
             </div>
 
@@ -380,7 +380,7 @@ export default function App() {
                 onClick={() => setCurrentView('backoffice')}
                 className="hover:text-slate-700 font-medium cursor-pointer"
               >
-                Acessar Back Office
+                Acessar Painel
               </button>
             </div>
           </div>
@@ -396,38 +396,20 @@ export default function App() {
     <div className="min-h-screen bg-slate-100 py-6 px-4 font-sans text-slate-800">
       <div className="max-w-2xl mx-auto space-y-4">
         
-        {/* BARRA SUPERIOR DE CONEXÃO & BACK OFFICE */}
-        <div className="bg-white rounded-xl border border-slate-200 p-3.5 shadow-xs flex flex-wrap items-center justify-between gap-2 text-xs">
+        {/* BARRA SUPERIOR */}
+        <div className="bg-white rounded-xl border border-slate-200 p-3.5 shadow-xs flex items-center justify-between gap-2 text-xs">
           <div className="flex items-center gap-2">
             <span className="font-bold text-slate-800">Torresul Imobiliária · Agenciamento</span>
           </div>
 
-          <div className="flex items-center gap-2">
-            <button
-              type="button"
-              onClick={() => setShowAutoImport(true)}
-              className="px-2.5 py-1 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded font-semibold flex items-center gap-1 cursor-pointer transition-colors"
-            >
-              <ClipboardPaste className="w-3.5 h-3.5" />
-              Colar do WhatsApp
-            </button>
-
-            <button
-              type="button"
-              onClick={() => setShowConfigLink(!showConfigLink)}
-              className="px-2.5 py-1 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded font-semibold flex items-center gap-1 cursor-pointer transition-colors"
-            >
-              <SlidersHorizontal className="w-3.5 h-3.5" />
-              Link do Corretor
-            </button>
-
+          <div>
             <button
               type="button"
               onClick={() => setCurrentView('backoffice')}
-              className="px-2.5 py-1 bg-slate-900 hover:bg-slate-800 text-white rounded font-semibold flex items-center gap-1 cursor-pointer transition-colors ml-1"
+              className="px-3.5 py-1.5 bg-slate-900 hover:bg-slate-800 text-white rounded-lg font-semibold flex items-center gap-1.5 cursor-pointer transition-colors text-xs"
             >
               <LayoutDashboard className="w-3.5 h-3.5" />
-              Painel Back Office
+              Painel
             </button>
           </div>
         </div>

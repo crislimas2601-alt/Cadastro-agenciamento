@@ -37,7 +37,7 @@ export const BackOfficeDashboard: React.FC<BackOfficeDashboardProps> = ({
   // Item selecionado para conferência
   const [selectedCadastro, setSelectedCadastro] = useState<FullCadastroData | null>(null);
   const [manualCodigo, setManualCodigo] = useState('');
-  const [conferidoNome, setConferidoNome] = useState('Back Office Torresul');
+  const [conferidoNome, setConferidoNome] = useState('Equipe Torresul');
   const [savingStatus, setSavingStatus] = useState(false);
 
   // Escuta em tempo real do Firestore
@@ -121,14 +121,14 @@ export const BackOfficeDashboard: React.FC<BackOfficeDashboardProps> = ({
   return (
     <div className="max-w-6xl mx-auto py-6 px-4 space-y-6">
       
-      {/* Cabeçalho do Back Office */}
+      {/* Cabeçalho do Painel */}
       <div className="bg-slate-900 text-white p-6 rounded-2xl shadow-sm flex flex-wrap items-center justify-between gap-4">
         <div>
           <span className="text-[10px] uppercase font-bold tracking-widest text-red-500 block">
             Torresul Imobiliária · Setor de Agenciamento
           </span>
           <h1 className="text-xl sm:text-2xl font-black text-white">
-            Back Office · Painel de Conferência de Cadastros
+            Painel de Conferência de Cadastros
           </h1>
           <p className="text-xs text-slate-300 mt-1">
             Consulte os cadastros e autorizações de venda preenchidos pelos proprietários em tempo real.
@@ -146,7 +146,7 @@ export const BackOfficeDashboard: React.FC<BackOfficeDashboardProps> = ({
             className="px-3.5 py-2 bg-white/10 hover:bg-white/20 text-white rounded-xl text-xs font-semibold flex items-center gap-1.5 transition-colors cursor-pointer border border-white/20"
           >
             <ExternalLink className="w-3.5 h-3.5" />
-            Abrir Formulário do Cliente
+            Abrir Formulário
           </button>
         </div>
       </div>
@@ -310,10 +310,10 @@ export const BackOfficeDashboard: React.FC<BackOfficeDashboardProps> = ({
                 </button>
               </div>
 
-              {/* Caixa de Ação do Back Office: Código do Imóvel & Check de Conferência */}
+              {/* Caixa de Ação da Imobiliária: Código do Imóvel & Check de Conferência */}
               <div className="bg-slate-50 p-4 rounded-xl border border-slate-200 space-y-3">
                 <span className="text-xs font-bold uppercase tracking-wider text-slate-800 block">
-                  Ação do Back Office (Conferência & Inclusão no Sistema):
+                  Conferência & Inclusão no Sistema (Torresul):
                 </span>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
