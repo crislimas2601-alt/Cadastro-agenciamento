@@ -1,0 +1,28 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    
+    // Coleção de cadastros e autorizações de venda
+    match /cadastros/{cadastroId} {
+      // Qualquer cliente com o link pode enviar o cadastro (create)
+      allow create: if request.resource.data.nomeCompleto is string 
+                    && request.resource.data.cpf is string
+                    && request.resource.data.telefone is string
+                    && request.resource.data.status in ['pendente', 'conferido'];
+
+      // O back office da imobiliária pode listar e ler os cadastros
+      allow read: if true;
+
+      // O back office pode atualizar status e código do imóvel
+      allow update: if true;
+
+      // Não permite deleção por clientes
+      allow delete: if false;
+    }
+
+    // Regra padrão de segurança para o restante do banco
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}

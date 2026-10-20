@@ -1,0 +1,105 @@
+{
+  "entities": {
+    "CadastroRecord": {
+      "title": "CadastroRecord",
+      "description": "Ficha de informações para cadastro e autorização de venda do imóvel",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "ID único do cadastro"
+        },
+        "status": {
+          "type": "string",
+          "enum": ["pendente", "conferido"],
+          "description": "Status da conferência no back office"
+        },
+        "codigoImovel": {
+          "type": "string",
+          "description": "Código do imóvel atribuído manualmente pelo back office"
+        },
+        "conferidoPor": {
+          "type": "string",
+          "description": "Nome do operador do back office que conferiu"
+        },
+        "conferidoEm": {
+          "type": "string",
+          "description": "Data e hora da conferência"
+        },
+        "criadoEm": {
+          "type": "string",
+          "description": "Data e hora do envio pelo cliente"
+        },
+        "nomeCorretor": {
+          "type": "string"
+        },
+        "nomeCompleto": {
+          "type": "string"
+        },
+        "cpf": {
+          "type": "string"
+        },
+        "dataNascimento": {
+          "type": "string"
+        },
+        "profissao": {
+          "type": "string"
+        },
+        "estadoCivil": {
+          "type": "string"
+        },
+        "email": {
+          "type": "string"
+        },
+        "telefone": {
+          "type": "string"
+        },
+        "cepOndeMora": {
+          "type": "string"
+        },
+        "enderecoProprietario": {
+          "type": "string"
+        },
+        "tipoImovel": {
+          "type": "string"
+        },
+        "enderecoImovel": {
+          "type": "string"
+        },
+        "cidadeImovel": {
+          "type": "string"
+        },
+        "valorAnuncio": {
+          "type": "string"
+        },
+        "solOrientacao": {
+          "type": "string"
+        },
+        "numeroVaga": {
+          "type": "string"
+        },
+        "moveisFicam": {
+          "type": "string"
+        },
+        "opcoesLazerDescricao": {
+          "type": "string"
+        },
+        "exclusividade": {
+          "type": "boolean"
+        },
+        "assinaturaDigitalUrl": {
+          "type": "string"
+        }
+      },
+      "required": ["nomeCompleto", "cpf", "telefone", "status", "criadoEm"]
+    }
+  },
+  "firestore": {
+    "/cadastros/{cadastroId}": {
+      "schema": {
+        "$ref": "#/entities/CadastroRecord"
+      },
+      "description": "Coleção contendo todos os cadastros e autorizações de venda preenchidos pelos clientes"
+    }
+  }
+}

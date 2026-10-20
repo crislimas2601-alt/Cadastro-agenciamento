@@ -1,0 +1,6 @@
+{
+  "name": "Informações para Cadastro - Agenciamento de Imóveis",
+  "description": "Formulário otimizado de cadastro e agenciamento de imóveis para envio direto ao proprietário.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
